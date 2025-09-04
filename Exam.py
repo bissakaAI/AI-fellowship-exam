@@ -12,8 +12,8 @@ def divide(a,b):
 print(("==" * 20).center(100) )
 print("WELCOME TO THE CALCULATOR PROGRAM".center(100))
 print(("==" * 20).center(100) )
-try:
-    while True:
+while True:
+    try:
         first_no = float(input("please input frist number: "))
         second_no = float(input("please input second number: "))
         choice= input("Choose from the option below \n1. to add (+)\n2. to subtract (-)\n3. to multiply (*)\n4. to divide (/)\n'exit' to quit:")
@@ -36,11 +36,13 @@ try:
         elif choice =="exit":
             print("Exiting calculator... Goodbye!")
             break
-except ZeroDivisionError:
-    print("you cant devide by zero (0)")
+    except ZeroDivisionError:
+        print("you cant devide by zero (0)")
+    except ValueError:
+        print("Invalid Input")
 
-except Exception as e:
-    print("Error: ",e)
+    except Exception as e:
+        print("Error: ",e)
 
 
 
